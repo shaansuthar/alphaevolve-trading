@@ -1,0 +1,84 @@
+# Build & packaging metadata for pwb‑alphaevolve – PEP 621 + Hatchling
+
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pwb-alphaevolve"
+version = "0.1.0"
+description = "Autonomous evolution of algorithmic‑trading strategies using Backtrader, Papers With Backtest data, and OpenAI LLMs."
+authors = [
+  { name = "AlphaEvolve Contributors", email = "hello@paperswithbacktest.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["algorithmic‑trading", "backtesting", "LLM", "evolution", "backtrader"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Intended Audience :: Developers",
+  "Topic :: Office/Business :: Financial :: Investment",
+]
+
+# ---------------------------------------------------------------------
+# Runtime dependencies
+# ---------------------------------------------------------------------
+dependencies = [
+  "pwb-toolbox>=0.1.2",
+  "pwb-backtrader>=1.9.78.123",
+  "openai>=1.0",
+  "backoff>=2.2",
+  "python-dateutil",
+  "pandas>=2.0",
+  "numpy",
+  "tqdm",
+  "pydantic>=2.0",
+  "pyyaml>=6.0",
+]
+
+# leave this exactly as you had it
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.4",
+  "black>=24.3",
+  "pre-commit>=3.0",
+  "ipykernel",
+]
+dashboard = [
+  "streamlit>=1.30",
+  "matplotlib>=3.8",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-org/pwb-alphaevolve"
+Issues = "https://github.com/your-org/pwb-alphaevolve/issues"
+
+# ---------------------------------------------------------------------
+# Wheel build include list
+# ---------------------------------------------------------------------
+[tool.hatch.build.targets.wheel]
+include = [
+  "alphaevolve/**",
+  "scripts/**",
+  "README.md",
+  "LICENSE",
+]
+
+# ---------------------------------------------------------------------
+# Console‑script entry points (none for now)
+# ---------------------------------------------------------------------
+# ---------------------------------------------------------------------
+# Tool configurations (style, lint) kept local to PyPI package
+# ---------------------------------------------------------------------
+[tool.black]
+line-length = 100
+skip-string-normalization = true
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "UP", "B", "C4"]
