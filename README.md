@@ -1,4 +1,4 @@
-# AlphaEvolve
+# QuantEvolve
 
 > **Inspired by [DeepMind’s AlphaEvolve coding agent](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/)**—this project applies the same evolutionary-LLM principles to financial markets.
 
