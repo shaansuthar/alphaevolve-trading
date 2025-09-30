@@ -4,9 +4,6 @@
 
 **Autonomously discovers and back‑tests high‑performing algorithmic‑trading strategies** using evolutionary LLM prompts, Backtrader, and the Papers‑With‑Backtest data ecosystem.
 
-![CI](https://img.shields.io/badge/build-passing-brightgreen)
-![License](https://img.shields.io/badge/license-MIT-blue)
-
 ![AlphaEvolve](alphaevolve-run.png)
 
 ---
